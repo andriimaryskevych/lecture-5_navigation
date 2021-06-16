@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get_it/get_it.dart';
 import 'package:navigation_app/routes.dart';
+import 'package:navigation_app/services/navigation.dart';
 
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key? key, required this.title}) : super(key: key);
@@ -29,7 +31,7 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          Navigator.of(context).pushNamed(secondPage);
+          GetIt.I<NavigationService>().pushNamed(secondPage);
         },
         tooltip: 'Increment',
         child: Icon(Icons.add),

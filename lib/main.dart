@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:navigation_app/observer.dart';
 import 'package:navigation_app/route_generator.dart';
 
 void main() {
@@ -15,6 +16,7 @@ class MyApp extends StatelessWidget {
       ),
       onGenerateRoute: RouteGenerator.onGenerateRoute,
       onUnknownRoute: RouteGenerator.onUnknownRoute,
+      navigatorObservers: [routeObserver],
     );
   }
 }

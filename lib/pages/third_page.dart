@@ -2,15 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:navigation_app/observer.dart';
 import 'package:navigation_app/routes.dart';
 
-class SecondPage extends StatefulWidget {
-  SecondPage({Key? key}) : super(key: key);
+class ThirdPage extends StatefulWidget {
+  ThirdPage({Key? key}) : super(key: key);
 
   @override
-  _SecondPageState createState() => _SecondPageState();
+  _ThirdPageState createState() => _ThirdPageState();
 }
 
-class _SecondPageState extends State<SecondPage> with RouteAware {
-  String page = 'page2';
+class _ThirdPageState extends State<ThirdPage> with RouteAware {
+  String page = 'page3';
 
   @override
   void didChangeDependencies() {
@@ -58,20 +58,20 @@ class _SecondPageState extends State<SecondPage> with RouteAware {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Second page'),
+        title: Text('Third page'),
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text(
-              'Second page',
+              'Third page',
             ),
             TextButton(
               onPressed: () {
-                Navigator.of(context).pushNamed(thirdPage);
+                Navigator.of(context).popUntil(ModalRoute.withName(homePage));
               },
-              child: Text('Page 3'),
+              child: Text('Home'),
             )
           ],
         ),

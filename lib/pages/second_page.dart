@@ -1,13 +1,22 @@
 import 'package:flutter/material.dart';
 
 class SecondPage extends StatelessWidget {
-  SecondPage({Key? key}) : super(key: key);
+  final String message;
+
+  SecondPage({
+    Key? key,
+    required this.message,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final arguments = ModalRoute.of(context)!.settings.arguments;
+
+    print(arguments.toString());
+
     return Scaffold(
       appBar: AppBar(
-        title: Text('Second page'),
+        title: Text('Second page $message'),
       ),
       body: Center(
         child: Column(

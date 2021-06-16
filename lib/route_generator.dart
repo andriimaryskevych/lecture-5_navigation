@@ -19,7 +19,9 @@ class RouteGenerator {
 
       case secondPage:
         return MaterialPageRoute(
-          builder: (_) => SecondPage(),
+          builder: (_) => SecondPage(
+            message: 'Hello',
+          ),
         );
 
       default:

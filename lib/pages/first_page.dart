@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:navigation_app/pages/second_page.dart';
 import 'package:navigation_app/routes.dart';
 
 class MyHomePage extends StatefulWidget {
@@ -29,7 +30,16 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          Navigator.of(context).pushNamed(secondPage);
+          Navigator.of(context).push(MaterialPageRoute(
+            builder: (_) {
+              return SecondPage(
+                message: 'Hello',
+              );
+            },
+            settings: RouteSettings(
+              arguments: 'Arguments Data',
+            ),
+          ));
         },
         tooltip: 'Increment',
         child: Icon(Icons.add),

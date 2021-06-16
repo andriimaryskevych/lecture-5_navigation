@@ -43,6 +43,12 @@ class _SecondPageState extends State<SecondPage> {
             Text(
               'Second page',
             ),
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop('Second page message');
+              },
+              child: Text('Go Back'),
+            )
           ],
         ),
       ),

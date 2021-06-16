@@ -30,16 +30,23 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          Navigator.of(context).push(MaterialPageRoute(
-            builder: (_) {
-              return SecondPage(
-                message: 'Hello',
-              );
-            },
-            settings: RouteSettings(
-              arguments: 'Arguments Data',
+          // Navigator.of(context).push(MaterialPageRoute(
+          //   builder: (_) {
+          //     return SecondPage(
+          //       message: 'Hello',
+          //     );
+          //   },
+          //   settings: RouteSettings(
+          //     arguments: 'Arguments Data',
+          //   ),
+          // ));
+
+          Navigator.of(context).pushNamed(
+            secondPage,
+            arguments: SecondPageArguments(
+              message: 'Arguments data push named',
             ),
-          ));
+          );
         },
         tooltip: 'Increment',
         child: Icon(Icons.add),

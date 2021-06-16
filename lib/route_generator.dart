@@ -6,6 +6,7 @@ import 'package:navigation_app/routes.dart';
 class RouteGenerator {
   static Route<dynamic>? onGenerateRoute(RouteSettings settings) {
     final String? name = settings.name;
+    final Object? arguments = settings.arguments;
 
     if (name == null) {
       return RouteGenerator.onUnknownRoute(settings);
@@ -20,7 +21,7 @@ class RouteGenerator {
       case secondPage:
         return MaterialPageRoute(
           builder: (_) => SecondPage(
-            message: 'Hello',
+            arguments: arguments as SecondPageArguments,
           ),
         );
 
